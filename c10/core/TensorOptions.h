@@ -649,9 +649,10 @@ inline DispatchKey computeDispatchKey(
           }
           return DispatchKey::XPU;
         }
+        case DeviceType::OPENCL:
+            return DispatchKey::PrivateUse1;
         case DeviceType::MKLDNN:
         case DeviceType::OPENGL:
-        case DeviceType::OPENCL:
         case DeviceType::IDEEP:
           TORCH_INTERNAL_ASSERT(
               0,
